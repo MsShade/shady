@@ -21,16 +21,13 @@ client.on("message", async message =>
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     
-    if (command === "ping")
-    {
+    if (command === "ping")    {
         const m = await message.channel.send("Ping?");
-        m.edit(`Pong! and in only ${m.createdTimestamp - message.createdTimestamp}ms.`);
-    }
-    if (command === "say")
-    {
+        m.edit(`Pong! and in only ${m.createdTimestamp - message.createdTimestamp}ms.`);    }
+    if (command === "say")    {
         const sayMessage = args.join(" ");
         message.delete().catch(O_o => { });
-        message.channel.send(sayMessage);
+        message.channel.send(sayMessage);    }
     }
     
 // THIS  MUST  BE  THIS  WAY
